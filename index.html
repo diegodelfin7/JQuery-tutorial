@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<form id="target" action="destination.html">
+		  <input type="text" value="Hello there">
+		  <input type="submit" value="Go">
+		</form>
+		<div id="other">
+		  Trigger the handler
+		</div>
+	</div>
+	<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+	<script>
+
+	
+		$( "#target" ).submit(function( event ) {
+		  alert( "Handler for .submit() called." );
+		  event.preventDefault();
+		});
+
+		$( "#other" ).click(function() {
+  			$( "#target" ).submit();
+		});
+	</script>
+</body>
+</html>
